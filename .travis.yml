@@ -1,0 +1,35 @@
+language: generic
+
+sudo: required
+
+dist: bionic
+
+cache:
+  - directories:
+    - "~/.emacs.d/"
+
+matrix:
+  fast_finish: true
+
+env:
+  - SPACEMACS_BRANCH=develop EMACS_VERSION=26
+  - SPACEMACS_BRANCH=master EMACS_VERSION=26
+
+install:
+  # Install Emacs
+  - sudo add-apt-repository ppa:kelleyk/emacs -y
+  - sudo apt update
+  - sudo apt install emacs$EMACS_VERSION
+  # Install Spacemacs
+  - if [ ! -r ~/.emacs.d/spacemacs.mk ]; then rm -rf ~/.emacs.d && git clone https://github.com/capsulecorplab/spacemacs.git ~/.emacs.d; fi
+  - cd ~/.emacs.d && git checkout $SPACEMACS_BRANCH && git show --name-status HEAD && cd ~/
+
+before_script:
+  - ln -svT $TRAVIS_BUILD_DIR/init.el $TRAVIS_BUILD_DIR/.spacemacs
+  - ln -sv $TRAVIS_BUILD_DIR/.spacemacs ~/
+  - ln -sv $TRAVIS_BUILD_DIR/.spacemacs.env ~/
+
+script:
+  # Run your tests
+  - emacs$EMACS_VERSION --version
+  - emacs$EMACS_VERSION -batch -l ~/.emacs.d/init.el --eval="(dotspacemacs/test-dotfile)"
