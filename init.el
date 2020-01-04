@@ -48,6 +48,7 @@ This function should only modify configuration layer settings."
      multiple-cursors
      org
      plantuml
+     python
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
