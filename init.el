@@ -46,7 +46,7 @@ This function should only modify configuration layer settings."
      ;; lsp
      ;; markdown
      multiple-cursors
-     ;; org
+     org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -63,7 +63,10 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages
+   '(
+     org-edna
+     )
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -467,4 +470,63 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  )
+  (with-eval-after-load 'org
+    ;; Run org-edna-mode
+    (org-edna-mode)
+
+    ;; Define a kanban style set of stages for todo tasks
+    (setq org-todo-keywords
+      '((sequence "Undefined(u)" "Icebox(i)" "Backlog(t)" "Blocked(b)" "WIP(w)" "V&V(v)" "|" "Done(d)" "Archived(a)")))
+
+    ;; The default keywords all use the same colour.
+    ;; Make the states easier to distinguish by using different colours
+    ;; Using X11 colour names from: https://en.wikipedia.org/wiki/Web_colors
+    ;; Setting colours (faces) using the `org-todo-keyword-faces' defcustom function
+    ;; https://github.com/tkf/org-mode/blob/master/lisp/org-faces.el#L376
+    ;; Using `with-eval-after-load' as a hook to call this setting when org-mode is run
+    (setq org-todo-keyword-faces
+    '(("Icebox" .  "SlateBlue")
+      ("Backlog" . "SlateGray")
+      ("Blocked" . "Firebrick")
+      ("WIP" . "DarkOrchid")
+      ("V&V" . "Teal")
+      ("Closed" . "ForestGreen")))
+
+    ;; Set default org file for org-capture
+    (setq-default org-default-notes-file "~/orgfiles/cache.org")
+    )
+
+  (setq
+    ;; Set directory for org-agenda-files
+    org-agenda-files (list "~/orgfiles/")
+    ;; Disable start-on-weekday
+    org-agenda-start-on-weekday nil
+    ;; Set default org-agenda span to 14 days
+    org-agenda-span 14)
+
+  ;; Set custom org-capture templates
+  (setq org-capture-templates
+  '(
+    ("n" "New timestamped Entry" entry (file "~/orgfiles/cache.org")
+    "* %U %?" :empty-lines 0)
+    ("u" "Undefined" entry (file "~/orgfiles/cache.org")
+    "* Undefined %?" :empty-lines 0)
+    ("i" "Icebox" entry (file "~/orgfiles/cache.org")
+    "* Icebox %?" :empty-lines 0)
+    ("t" "Backlog" entry (file "~/orgfiles/cache.org")
+    "* Backlog %?" :empty-lines 0)
+    ("b" "Blocked" entry (file "~/orgfiles/cache.org")
+     "* Blocked %?" :empty-lines 0)
+    ("w" "WIP" entry (file "~/orgfiles/cache.org")
+     "* WIP %?" :empty-lines 0)
+    ("v" "validate <<usecase>> enough to refine <<requirement>>" entry (file "~/orgfiles/cache.org")
+     "* V&V validate %?<<usecase>> enough to refine <<requirement>>" :empty-lines 0)
+    ("r" "research <<block>> enough to satisfy <<requirement>>" entry (file "~/orgfiles/cache.org")
+     "* Backlog research %?<<block>> enough to satisfy <<requirement>>" :empty-lines 0)
+    ("s" "specify <<testcase>> enough to verify <<requirement>>" entry (file "~/orgfiles/cache.org")
+     "* Backlog specify %?<<testcase>> enough to verify <<requirement>>" :empty-lines 0)
+    ))
+
+  ;; Set org-refile targets
+  (setq org-refile-targets '((org-agenda-files :maxlevel . 2)))
+)
