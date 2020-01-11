@@ -47,6 +47,7 @@ This function should only modify configuration layer settings."
      ;; markdown
      multiple-cursors
      org
+     plantuml
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -66,6 +67,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-additional-packages
    '(
      org-edna
+     plantuml-mode
      )
 
    ;; A list of packages that cannot be updated.
@@ -529,4 +531,13 @@ before packages are loaded."
 
   ;; Set org-refile targets
   (setq org-refile-targets '((org-agenda-files :maxlevel . 2)))
+
+  ;; Enable plantuml-mode for PlantUML files
+  (add-to-list 'auto-mode-alist '("\\.puml\\'" . plantuml-mode))
+  (add-to-list 'auto-mode-alist '("\\.iuml\\'" . plantuml-mode))
+
+  ;; Set plantuml default Execution mode to jar
+  ;; plantuml.jar downloaded from https://sourceforge.net/projects/plantuml/files/plantuml.jar/download
+  (setq plantuml-default-exec-mode 'jar)
+  (setq plantuml-jar-path (expand-file-name "~/plantuml.jar"))
 )
