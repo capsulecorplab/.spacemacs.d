@@ -48,7 +48,10 @@ This function should only modify configuration layer settings."
      multiple-cursors
      org
      plantuml
-     python
+     (python :variables
+       python-formatter 'black
+       python-format-on-save t
+       )
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
