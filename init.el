@@ -42,6 +42,7 @@ This function should only modify configuration layer settings."
      ;; auto-completion
      ;; better-defaults
      emacs-lisp
+     finance
      ;; git
      helm
      ;; lsp
@@ -545,4 +546,7 @@ before packages are loaded."
   ;; plantuml.jar downloaded from https://sourceforge.net/projects/plantuml/files/plantuml.jar/download
   (setq plantuml-default-exec-mode 'jar)
   (setq plantuml-jar-path (expand-file-name "~/plantuml.jar"))
+
+  ;; set alignment for column transaction posts
+  (setq ledger-post-amount-alignment-column 88)
 )
