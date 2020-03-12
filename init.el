@@ -61,6 +61,7 @@ This function should only modify configuration layer settings."
      ;; syntax-checking
      treemacs
      ;; version-control
+     yaml
      )
 
    ;; List of additional packages that will be installed without being
