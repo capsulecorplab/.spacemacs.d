@@ -45,6 +45,7 @@ This function should only modify configuration layer settings."
      finance
      ;; git
      helm
+     html
      ;; lsp
      markdown
      multiple-cursors
