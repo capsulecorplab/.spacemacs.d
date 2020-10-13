@@ -506,6 +506,8 @@ before packages are loaded."
     (setq-default org-default-notes-file "~/orgfiles/cache.org")
     )
 
+  (setq debug-on-error t)
+
   (setq
     ;; Set directory for org-agenda-files
     org-agenda-files (list "~/orgfiles/")
