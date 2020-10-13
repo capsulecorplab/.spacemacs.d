@@ -537,6 +537,9 @@ before packages are loaded."
      "* Backlog specify %?<<testcase>> enough to verify <<requirement>>" :empty-lines 0)
     ))
 
+  ;; Create org-id for tasks created w/ org-capture
+  (add-hook 'org-capture-mode-hook #'org-id-get-create)
+
   ;; Set org-refile targets
   (setq org-refile-targets '((org-agenda-files :maxlevel . 2)))
 
