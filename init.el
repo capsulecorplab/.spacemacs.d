@@ -522,6 +522,9 @@ before packages are loaded."
     ("n" "New Timestamped Entry" entry
      (file "~/orgfiles/zettelkasten.org")
      "* %U %?" :empty-lines 0)
+    ("a" "Annotation Entry" entry
+     (file "~/orgfiles/zettelcasten.org")
+     "* %a" :empty-lines 0)
     ("t" "Task: <verb/action> <thing/activity> (e.g., \"Perform backup\", \"Research comp sci concept\")" entry
      (file "~/orgfiles/zettelkasten.org")
      "* Backlog %^{verb/action} %^{thing/activity} :task:" :empty-lines 0)
