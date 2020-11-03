@@ -519,25 +519,25 @@ before packages are loaded."
   ;; Set custom org-capture templates
   (setq org-capture-templates
   '(
-    ("n" "New timestamped Entry" entry (file "~/orgfiles/cache.org")
-    "* %U %?" :empty-lines 0)
-    ("u" "Undefined" entry (file "~/orgfiles/cache.org")
-    "* Undefined %?" :empty-lines 0)
-    ("i" "Icebox" entry (file "~/orgfiles/cache.org")
-    "* Icebox %?" :empty-lines 0)
-    ("t" "Backlog" entry (file "~/orgfiles/cache.org")
-    "* Backlog %?" :empty-lines 0)
-    ("b" "Blocked" entry (file "~/orgfiles/cache.org")
-     "* Blocked %?" :empty-lines 0)
-    ("w" "WIP" entry (file "~/orgfiles/cache.org")
-     "* WIP %?" :empty-lines 0)
-    ("v" "validate <<usecase>> enough to refine <<requirement>>" entry (file "~/orgfiles/cache.org")
-     "* V&V validate %?<<usecase>> enough to refine <<requirement>>" :empty-lines 0)
-    ("r" "research <<block>> enough to satisfy <<requirement>>" entry (file "~/orgfiles/cache.org")
-     "* Backlog research %?<<block>> enough to satisfy <<requirement>>" :empty-lines 0)
-    ("s" "specify <<testcase>> enough to verify <<requirement>>" entry (file "~/orgfiles/cache.org")
-     "* Backlog specify %?<<testcase>> enough to verify <<requirement>>" :empty-lines 0)
+    ("n" "New Timestamped Entry" entry
+     (file "~/orgfiles/cache.org")
+     "* %U %?" :empty-lines 0)
+    ("t" "Task: <verb/action> <thing/activity> (e.g., \"Perform backup\", \"Research comp sci concept\")" entry
+     (file "~/orgfiles/cache.org")
+     "* Backlog %^{verb/action} %^{thing/activity} :task:" :empty-lines 0)
+    ("u" "User Story: As a <role>, I want <requirement>, so that <reason>" entry
+     (file "~/orgfiles/cache.org")
+     "* Backlog As a %^{role}, I want %^{requirement}, so that %^{reason} :userstory:" :empty-lines 0)
+    ("g" "Gherkin: Given <condition>, when <action/event>, then <expected behavior>" entry
+     (file "~/orgfiles/cache.org")
+     "* Backlog Given %^{condition}, when %^{action/event}, then %^{expected behavior} :gherkin:" :empty-lines 0)
+    ("b" "bug: Given <condition>, when <action/event>, <description of unexpected behavior>" entry
+     (file "~/orgfiles/cache.org")
+     "* Backlog Given %^{condition}, when %^{action/event}, %^{description of unexpected behavior} :bug:" :empty-lines 0)
     ))
+
+  ;; Align tags from org-capture
+  (add-hook 'org-capture-mode-hook #'org-align-all-tags)
 
   ;; Create org-id for tasks created w/ org-capture
   (add-hook 'org-capture-mode-hook #'org-id-get-create)
