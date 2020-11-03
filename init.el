@@ -525,6 +525,12 @@ before packages are loaded."
     ("t" "Task: <verb/action> <thing/activity> (e.g., \"Perform backup\", \"Research comp sci concept\")" entry
      (file "~/orgfiles/zettelkasten.org")
      "* Backlog %^{verb/action} %^{thing/activity} :task:" :empty-lines 0)
+    ("d" "Diagnose <thing/behavior>" entry
+     (file "~/orgfiles/zettelcasten.org")
+     "* Backlog Diagnose %^{thing/behavior} :task:" :empty-lines 0)
+    ("f" "Fix <thing/behavior>" entry
+     (file "~/orgfiles/zettelcasten.org")
+     "* Backlog Fix %^{thing/behavior} :task:" :empty-lines 0)
     ("u" "User Story: As a <role>, I want <requirement>, so that <reason>" entry
      (file "~/orgfiles/zettelkasten.org")
      "* Backlog As a %^{role}, I want %^{requirement}, so that %^{reason} :userstory:" :empty-lines 0)
