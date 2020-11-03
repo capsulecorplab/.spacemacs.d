@@ -503,7 +503,7 @@ before packages are loaded."
       ("Closed" . "ForestGreen")))
 
     ;; Set default org file for org-capture
-    (setq-default org-default-notes-file "~/orgfiles/cache.org")
+    (setq-default org-default-notes-file "~/orgfiles/zettelkasten.org")
     )
 
   (setq debug-on-error t)
@@ -520,19 +520,19 @@ before packages are loaded."
   (setq org-capture-templates
   '(
     ("n" "New Timestamped Entry" entry
-     (file "~/orgfiles/cache.org")
+     (file "~/orgfiles/zettelkasten.org")
      "* %U %?" :empty-lines 0)
     ("t" "Task: <verb/action> <thing/activity> (e.g., \"Perform backup\", \"Research comp sci concept\")" entry
-     (file "~/orgfiles/cache.org")
+     (file "~/orgfiles/zettelkasten.org")
      "* Backlog %^{verb/action} %^{thing/activity} :task:" :empty-lines 0)
     ("u" "User Story: As a <role>, I want <requirement>, so that <reason>" entry
-     (file "~/orgfiles/cache.org")
+     (file "~/orgfiles/zettelkasten.org")
      "* Backlog As a %^{role}, I want %^{requirement}, so that %^{reason} :userstory:" :empty-lines 0)
     ("g" "Gherkin: Given <condition>, when <action/event>, then <expected behavior>" entry
-     (file "~/orgfiles/cache.org")
+     (file "~/orgfiles/zettelkasten.org")
      "* Backlog Given %^{condition}, when %^{action/event}, then %^{expected behavior} :gherkin:" :empty-lines 0)
     ("b" "bug: Given <condition>, when <action/event>, <description of unexpected behavior>" entry
-     (file "~/orgfiles/cache.org")
+     (file "~/orgfiles/zettelkasten.org")
      "* Backlog Given %^{condition}, when %^{action/event}, %^{description of unexpected behavior} :bug:" :empty-lines 0)
     ))
 
