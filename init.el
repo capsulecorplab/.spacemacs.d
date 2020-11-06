@@ -503,14 +503,14 @@ before packages are loaded."
       ("Closed" . "ForestGreen")))
 
     ;; Set default org file for org-capture
-    (setq-default org-default-notes-file "~/orgfiles/zettelkasten.org")
+    (setq-default org-default-notes-file "~/katra/zettelkasten.org")
     )
 
   (setq debug-on-error t)
 
   (setq
     ;; Set directory for org-agenda-files
-    org-agenda-files (list "~/orgfiles/")
+    org-agenda-files (list "~/katra/")
     ;; Disable start-on-weekday
     org-agenda-start-on-weekday nil
     ;; Set default org-agenda span to 14 days
@@ -520,28 +520,28 @@ before packages are loaded."
   (setq org-capture-templates
   '(
     ("n" "New Timestamped Entry" entry
-     (file "~/orgfiles/zettelkasten.org")
+     (file "~/katra/zettelkasten.org")
      "* %U %?" :empty-lines 0)
     ("a" "Annotation Entry" entry
-     (file "~/orgfiles/zettelcasten.org")
+     (file "~/katra/zettelkasten.org")
      "* %a" :empty-lines 0)
     ("t" "Task: <verb/action> <thing/activity> (e.g., \"Perform backup\", \"Research comp sci concept\")" entry
-     (file "~/orgfiles/zettelkasten.org")
+     (file "~/katra/zettelkasten.org")
      "* Backlog %^{verb/action} %^{thing/activity} :task:" :empty-lines 0)
     ("d" "Diagnose <thing/behavior>" entry
-     (file "~/orgfiles/zettelcasten.org")
+     (file "~/katra/zettelkasten.org")
      "* Backlog Diagnose %^{thing/behavior} :task:" :empty-lines 0)
     ("f" "Fix <thing/behavior>" entry
-     (file "~/orgfiles/zettelcasten.org")
+     (file "~/katra/zettelkasten.org")
      "* Backlog Fix %^{thing/behavior} :task:" :empty-lines 0)
     ("u" "User Story: As a <role>, I want <requirement>, so that <reason>" entry
-     (file "~/orgfiles/zettelkasten.org")
+     (file "~/katra/zettelkasten.org")
      "* Backlog As a %^{role}, I want %^{requirement}, so that %^{reason} :userstory:" :empty-lines 0)
     ("g" "Gherkin: Given <condition>, when <action/event>, then <expected behavior>" entry
-     (file "~/orgfiles/zettelkasten.org")
+     (file "~/katra/zettelkasten.org")
      "* Backlog Given %^{condition}, when %^{action/event}, then %^{expected behavior} :gherkin:" :empty-lines 0)
     ("b" "bug: Given <condition>, when <action/event>, <description of unexpected behavior>" entry
-     (file "~/orgfiles/zettelkasten.org")
+     (file "~/katra/zettelkasten.org")
      "* Backlog Given %^{condition}, when %^{action/event}, %^{description of unexpected behavior} :bug:" :empty-lines 0)
     ))
 
