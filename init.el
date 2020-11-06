@@ -562,6 +562,7 @@ before packages are loaded."
   ;; plantuml.jar downloaded from https://sourceforge.net/projects/plantuml/files/plantuml.jar/download
   (setq plantuml-default-exec-mode 'jar)
   (setq plantuml-jar-path (expand-file-name "~/plantuml.jar"))
+  (setq plantuml-output-type "png")
 
   ;; set alignment for column transaction posts
   (setq ledger-post-amount-alignment-column 88)
