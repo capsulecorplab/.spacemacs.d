@@ -536,7 +536,7 @@ before packages are loaded."
      "* Backlog Fix %^{thing/behavior} :task:" :empty-lines 0)
     ("u" "User Story: As a <role>, I want <requirement>, so that <reason>" entry
      (file "~/katra/zettelkasten.org")
-     "* Backlog As a %^{role}, I want %^{requirement}, so that %^{reason} :userstory:" :empty-lines 0)
+     "* Backlog As a %^{role}, I want %^{requirement}, in order to %^{reason} :userstory:" :empty-lines 0)
     ("g" "Gherkin: Given <condition>, when <action/event>, then <expected behavior>" entry
      (file "~/katra/zettelkasten.org")
      "* Backlog Given %^{condition}, when %^{action/event}, then %^{expected behavior} :gherkin:" :empty-lines 0)
