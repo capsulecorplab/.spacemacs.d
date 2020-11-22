@@ -522,27 +522,15 @@ before packages are loaded."
     ("n" "New Timestamped Entry" entry
      (file "~/katra/zettelkasten.org")
      "* %U %?" :empty-lines 0)
-    ("a" "Annotation Entry" entry
-     (file "~/katra/zettelkasten.org")
-     "* %a" :empty-lines 0)
     ("t" "Task: <verb/action> <thing/activity> (e.g., \"Perform backup\", \"Research comp sci concept\")" entry
      (file "~/katra/zettelkasten.org")
      "* Backlog %^{verb/action} %^{thing/activity} :task:" :empty-lines 0)
-    ("d" "Diagnose <thing/behavior>" entry
-     (file "~/katra/zettelkasten.org")
-     "* Backlog Diagnose %^{thing/behavior} :task:" :empty-lines 0)
-    ("f" "Fix <thing/behavior>" entry
-     (file "~/katra/zettelkasten.org")
-     "* Backlog Fix %^{thing/behavior} :task:" :empty-lines 0)
     ("u" "User Story: As a <role>, I want <requirement>, so that <reason>" entry
      (file "~/katra/zettelkasten.org")
      "* Backlog As a %^{role}, I want %^{requirement}, in order to %^{reason} :userstory:" :empty-lines 0)
     ("g" "Gherkin: Given <condition>, when <action/event>, then <expected behavior>" entry
      (file "~/katra/zettelkasten.org")
      "* Backlog Given %^{condition}, when %^{action/event}, then %^{expected behavior} :gherkin:" :empty-lines 0)
-    ("b" "bug: Given <condition>, when <action/event>, <description of unexpected behavior>" entry
-     (file "~/katra/zettelkasten.org")
-     "* Backlog Given %^{condition}, when %^{action/event}, %^{description of unexpected behavior} :bug:" :empty-lines 0)
     ))
 
   ;; Align tags from org-capture
