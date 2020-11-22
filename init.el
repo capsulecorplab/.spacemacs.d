@@ -563,6 +563,7 @@ before packages are loaded."
   (setq plantuml-default-exec-mode 'jar)
   (setq plantuml-jar-path (expand-file-name "~/plantuml.jar"))
   (setq plantuml-output-type "png")
+  (setq plantuml-indent-level 4)
 
   ;; set alignment for column transaction posts
   (setq ledger-post-amount-alignment-column 88)
