@@ -520,16 +520,16 @@ before packages are loaded."
   (setq org-capture-templates
   '(
     ("n" "New Timestamped Entry" entry
-     (file "~/katra/zettelkasten.org")
+     (file+headline "~/katra/zettelkasten.org" "notes")
      "* %U %?" :empty-lines 0)
     ("t" "Task: <verb/action> <thing/activity> (e.g., \"Perform backup\", \"Research comp sci concept\")" entry
-     (file "~/katra/zettelkasten.org")
+     (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog %^{verb/action} %^{thing/activity} :task:" :empty-lines 0)
     ("u" "User Story: As a <role>, I want <requirement>, so that <reason>" entry
-     (file "~/katra/zettelkasten.org")
+     (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog As a %^{role}, I want %^{requirement}, in order to %^{reason} :userstory:" :empty-lines 0)
     ("g" "Gherkin: Given <condition>, when <action/event>, then <expected behavior>" entry
-     (file "~/katra/zettelkasten.org")
+     (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog Given %^{condition}, when %^{action/event}, then %^{expected behavior} :gherkin:" :empty-lines 0)
     ))
 
