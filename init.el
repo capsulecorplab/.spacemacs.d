@@ -522,6 +522,9 @@ before packages are loaded."
     ("n" "New Timestamped Entry" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* %U %?" :empty-lines 0)
+    ("s" "New Timestamped Entry Soundbite" entry
+     (file+headline "~/katra/zettelkasten.org" "notes")
+     "* %U %? :soundbite:" :empty-lines 0)
     ("t" "Task: <verb/action> <thing/activity> (e.g., \"Perform backup\", \"Research comp sci concept\")" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog %^{verb/action} %^{thing/activity} :task:" :empty-lines 0)
