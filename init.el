@@ -519,30 +519,30 @@ before packages are loaded."
   ;; Set custom org-capture templates
   (setq org-capture-templates
   '(
-    ("n" "New Timestamped Entry" entry
+    ("n" "New note" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
-     "* %U %?" :empty-lines 0)
-    ("s" "New Timestamped Entry Soundbite" entry
+     "* %U %?\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+    ("s" "Soundbite Entry" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
-     "* %U %? :soundbite:" :empty-lines 0)
-    ("b" "New Timestamped Entry Bookmark" entry
+     "* %? :soundbite:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+    ("b" "Bookmark Entry" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
-     "* %U %? :bookmark:" :empty-lines 0)
+     "* %? :bookmark:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("t" "Task: <verb/action> <thing/activity> (e.g., \"Perform backup\", \"Research comp sci concept\")" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
-     "* Backlog %^{verb/action} %^{thing/activity} :task:" :empty-lines 0)
+     "* Backlog %^{verb/action} %^{thing/activity} :task:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("m" "Menial Task: <verb/action> <thing/activity>" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
-     "* Backlog %^{verb/action} %^{thing/activity} :menialtask:" :empty-lines 0)
+     "* Backlog %^{verb/action} %^{thing/activity} :menialtask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("c" "Creative Task: <verb/action> <thing/activity>" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
-     "* Backlog %^{verb/action} %^{thing/activity} :creativetask:" :empty-lines 0)
+     "* Backlog %^{verb/action} %^{thing/activity} :creativetask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("u" "User Story: As a <role>, I want <requirement>, so that <reason>" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
-     "* Backlog validate user story: As a %^{role}, I want to %^{behavior}, so that I can %^{rationale} :userstory:" :empty-lines 0)
+     "* Backlog validate user story: As a %^{role}, I want to %^{behavior}, so that I can %^{rationale} :userstory:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("g" "Gherkin: Given <condition>, when <action/event>, then <expected behavior>" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
-     "* Backlog verify gherkin: Given %^{condition}, when %^{action/event}, then %^{expected behavior} :gherkin:" :empty-lines 0)
+     "* Backlog verify gherkin: Given %^{condition}, when %^{action/event}, then %^{expected behavior} :gherkin:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ))
 
   ;; Align tags from org-capture
