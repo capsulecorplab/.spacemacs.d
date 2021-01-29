@@ -519,9 +519,9 @@ before packages are loaded."
   ;; Set custom org-capture templates
   (setq org-capture-templates
   '(
-    ("n" "New note" entry
-     (file+headline "~/katra/zettelkasten.org" "notes")
-     "* %U %?\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+    ("m" "Meeting Minute" checkitem
+     (file+headline "~/katra/zettelkasten.org" "minutes")
+     "- %U %?" :empty-lines 0)
     ("s" "Soundbite Entry" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* %? :soundbite:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
@@ -531,9 +531,9 @@ before packages are loaded."
     ("t" "Task: <verb/action> <thing/activity> (e.g., \"Perform backup\", \"Research comp sci concept\")" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog %^{verb/action} %^{thing/activity} :task:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("m" "Menial Task: <verb/action> <thing/activity>" entry
+    ("r" "Routine Task: <verb/action> <thing/activity>" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
-     "* Backlog %^{verb/action} %^{thing/activity} :menialtask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+     "* Backlog %^{verb/action} %^{thing/activity} :routinetask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("c" "Creative Task: <verb/action> <thing/activity>" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog %^{verb/action} %^{thing/activity} :creativetask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
