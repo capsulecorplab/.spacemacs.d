@@ -528,13 +528,13 @@ before packages are loaded."
     ("b" "Bookmark Entry" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* %? :bookmark:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("t" "Task: <verb/action> <thing/activity> (e.g., \"Perform backup\", \"Research comp sci concept\")" entry
+    ("t" "(Focused) Task: <verb/action> <thing/activity> (e.g., \"Read comp sci concept\")" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog %^{verb/action} %^{thing/activity} :task:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("r" "Routine Task: <verb/action> <thing/activity>" entry
+    ("r" "Routine Task: <verb/action> <thing/activity> (e.g., \"Update package dependencies\")" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog %^{verb/action} %^{thing/activity} :routinetask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("c" "Creative Task: <verb/action> <thing/activity>" entry
+    ("c" "Creative Task: <verb/action> <thing/activity> (e.g., \"Design software architecture\")" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog %^{verb/action} %^{thing/activity} :creativetask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("u" "User Story: As a <role>, I want <requirement>, so that <reason>" entry
