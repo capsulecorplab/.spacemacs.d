@@ -530,13 +530,16 @@ before packages are loaded."
      "* %? :bookmark:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("t" "(Focused) Task: <verb/action> <thing/activity> (e.g., \"Read comp sci concept\")" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
-     "* Backlog %^{verb/action} %^{thing/activity} :task:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+     "* Backlog %^{verb/action} %^{thing/activity} :focusedtask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("r" "Routine Task: <verb/action> <thing/activity> (e.g., \"Update package dependencies\")" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog %^{verb/action} %^{thing/activity} :routinetask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("c" "Creative Task: <verb/action> <thing/activity> (e.g., \"Design software architecture\")" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog %^{verb/action} %^{thing/activity} :creativetask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+    ("e" "Epic: <verb/action> <thing/activity> (e.g., \"Refactor codebase\")" entry
+     (file+headline "~/katra/zettelkasten.org" "notes")
+     "* Backlog %^{verb/action} %^{thing/activity} :epic:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("u" "User Story: As a <role>, I want <requirement>, so that <reason>" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog validate user story: As a %^{role}, I want to %^{behavior}, so that I can %^{rationale} :userstory:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
