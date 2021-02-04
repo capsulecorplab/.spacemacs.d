@@ -542,10 +542,10 @@ before packages are loaded."
      "* Backlog %^{verb/action} %^{thing/activity} :epic:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("u" "User Story: As a <role>, I want <requirement>, so that <reason>" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
-     "* Backlog validate user story: As a %^{role}, I want to %^{behavior}, so that I can %^{rationale} :userstory:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+     "* Backlog As a %^{role}, I want to %^{behavior}, so that I can %^{rationale} :userstory:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("g" "Gherkin: Given <condition>, when <action/event>, then <expected behavior>" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
-     "* Backlog verify gherkin: Given %^{condition}, when %^{action/event}, then %^{expected behavior} :gherkin:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+     "* Backlog Given %^{condition}, when %^{action/event}, then %^{expected behavior} :gherkin:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ))
 
   ;; Align tags from org-capture
