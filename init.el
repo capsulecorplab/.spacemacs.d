@@ -519,7 +519,7 @@ before packages are loaded."
   ;; Set custom org-capture templates
   (setq org-capture-templates
   '(
-    ("m" "Meeting Minute" checkitem
+    ("t" "Timestamped Meeting Minute" checkitem
      (file+headline "~/katra/zettelkasten.org" "minutes")
      "- %U %?" :empty-lines 0)
     ("s" "Soundbite Entry" entry
@@ -528,7 +528,7 @@ before packages are loaded."
     ("b" "Bookmark Entry" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* %? :bookmark:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("t" "(Focused) Task: <verb/action> <thing/activity> (e.g., \"Read comp sci concept\")" entry
+    ("f" "Focused Task: <verb/action> <thing/activity> (e.g., \"Read comp sci concept\")" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog %^{verb/action} %^{thing/activity} :focusedtask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("r" "Routine Task: <verb/action> <thing/activity> (e.g., \"Update package dependencies\")" entry
