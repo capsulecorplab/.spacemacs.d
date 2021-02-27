@@ -564,7 +564,7 @@ before packages are loaded."
         )
 
   ;; Set org-refile targets
-  (setq org-refile-targets '((org-agenda-files :maxlevel . 2)))
+  (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
 
   ;; Enable plantuml-mode for PlantUML files
   (add-to-list 'auto-mode-alist '("\\.puml\\'" . plantuml-mode))
