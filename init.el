@@ -528,6 +528,9 @@ before packages are loaded."
     ("b" "Bookmark Entry" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* %? :bookmark:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+    ("a" "Annotation Entry" entry
+     (file+headline "~/katra/zettelkasten.org" "notes")
+     "* Backlog %?%a :annotation:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("l" "LMGTFY Entry" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog %? :lmgtfy:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
