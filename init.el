@@ -560,10 +560,10 @@ before packages are loaded."
   ;; Create org-id for tasks created w/ org-capture
   (add-hook 'org-capture-mode-hook #'org-id-get-create)
 
-  ;; Set org-pomodoro timer to 40-20
-  (setq org-pomodoro-length 40
-        org-pomodoro-short-break-length 20
-        org-pomodoro-long-break-length 30
+  ;; Set org-pomodoro timer to 25-5
+  (setq org-pomodoro-length 25
+        org-pomodoro-short-break-length 5
+        org-pomodoro-long-break-length 20
         )
 
   ;; Set org-refile targets
