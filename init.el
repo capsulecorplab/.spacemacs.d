@@ -540,7 +540,7 @@ before packages are loaded."
     ("r" "Routine Task: <verb/action> <thing/activity> (e.g., \"Update package dependencies\")" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog %^{verb/action} %^{thing/activity} :routinetask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("c" "Creative Task: <verb/action> <thing/activity> (e.g., \"Design software architecture\")" entry
+    ("c" "Creative Task: <verb/action> <thing/activity> (e.g., \"Rehearse steps for setting up boilerplate\")" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog %^{verb/action} %^{thing/activity} :creativetask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("e" "Epic: <verb/action> <thing/activity> (e.g., \"Refactor codebase\")" entry
