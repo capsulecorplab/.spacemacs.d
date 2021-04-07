@@ -549,6 +549,9 @@ before packages are loaded."
     ("e" "Epic: <verb/action> <thing/activity> (e.g., \"Refactor codebase\")" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog %^{verb/action} %^{thing/activity} :epic:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+    ("n" "Stakeholder Need: As a <stakeholder>, I need <need>" entry
+     (file+headline "~/katra/zettelkasten.org" "notes")
+     "* Backlog As a %^{stakeholder}, I need %^{need} :stakeholderneed:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("u" "User Story: As a <role>, I want <requirement>, so that <reason>" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog As a %^{role}, I want to %^{behavior}, so that I can %^{rationale} :userstory:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
