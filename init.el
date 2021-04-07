@@ -522,7 +522,7 @@ before packages are loaded."
   ;; Set custom org-capture templates
   (setq org-capture-templates
   '(
-    ("t" "Timestamped Meeting Minute" checkitem
+    ("m" "Meeting Minute Entry" checkitem
      (file+headline "~/katra/zettelkasten.org" "minutes")
      "- %U %?" :empty-lines 0)
     ("s" "Soundbite Entry" entry
