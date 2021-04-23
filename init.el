@@ -546,9 +546,9 @@ before packages are loaded."
     ("c" "Context Management: <verb/action> <thing/activity> (e.g., \"Rehearse steps for setting up boilerplate\")" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog %^{verb/action} %^{thing/activity} :contextmanagement:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("e" "Epic: <verb/action> <thing/activity> (e.g., \"Refactor codebase\")" entry
+    ("e" "Epic: <milestone/release> (e.g., \"Feature milestone/release\")" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
-     "* Backlog %^{verb/action} %^{thing/activity} :epic:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+     "* %^{milestone/release} :epic:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("n" "Stakeholder Need: As a <stakeholder>, I need <need>" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog As a %^{stakeholder}, I need %^{need} :stakeholderneed:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
