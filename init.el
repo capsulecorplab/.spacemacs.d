@@ -543,7 +543,7 @@ before packages are loaded."
     ("r" "Routine Task: <verb/action> <thing/activity> (e.g., \"Update package dependencies\")" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog %^{verb/action} %^{thing/activity} :routinetask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("c" "Context Management: <verb/action> <thing/activity> (e.g., \"Rehearse steps for setting up boilerplate\")" entry
+    ("c" "Context Management: <verb/action> <thing/activity> (e.g., \"Setup boilerplate/scaffolding\")" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog %^{verb/action} %^{thing/activity} :contextmanagement:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("e" "Epic: <milestone/release> (e.g., \"Feature milestone/release\")" entry
