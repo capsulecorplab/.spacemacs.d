@@ -537,27 +537,27 @@ before packages are loaded."
     ("l" "LMGTFY Entry" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog %? :lmgtfy:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("f" "Focused Task: <verb/action> <thing/activity> (e.g., \"Read comp sci concept\")" entry
-     (file+headline "~/katra/zettelkasten.org" "notes")
-     "* Backlog %^{verb/action} %^{thing/activity} :focusedtask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("r" "Routine Task: <verb/action> <thing/activity> (e.g., \"Update package dependencies\")" entry
-     (file+headline "~/katra/zettelkasten.org" "notes")
-     "* Backlog %^{verb/action} %^{thing/activity} :routinetask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("c" "Context Management: <verb/action> <thing/activity> (e.g., \"Setup boilerplate/scaffolding\")" entry
-     (file+headline "~/katra/zettelkasten.org" "notes")
-     "* Backlog %^{verb/action} %^{thing/activity} :contextmanagement:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("e" "Epic: <milestone/release> (e.g., \"Feature milestone/release\")" entry
-     (file+headline "~/katra/zettelkasten.org" "notes")
-     "* %^{milestone/release} :epic:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("n" "Stakeholder Need: As a <stakeholder>, I need <need>" entry
+    ("n" "Stakeholder Need: As a {{stakeholder}}, I need {{need}}" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog As a %^{stakeholder}, I need %^{need} :stakeholderneed:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("u" "User Story: As a <role>, I want <requirement>, so that <reason>" entry
+    ("e" "Epic: {{milestone/release}} (e.g., \"Feature milestone/release\")" entry
+     (file+headline "~/katra/zettelkasten.org" "notes")
+     "* %^{milestone/release} :epic:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+    ("u" "User Story: As a {{role}}, I want {{requirement}}, so that {{reason}}" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog As a %^{role}, I want to %^{behavior}, so that I can %^{rationale} :userstory:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("g" "Gherkin: Given <condition>, when <action/event>, then <expected behavior>" entry
+    ("g" "Gherkin: Given {{condition}}, when {{action/event}}, then {{expected behavior}}" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog Given %^{condition}, when %^{action/event}, then %^{expected behavior} :gherkin:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+    ("c" "Context Management: {{verb/action}} {{thing/activity}} (e.g., \"Setup boilerplate/scaffolding\")" entry
+     (file+headline "~/katra/zettelkasten.org" "notes")
+     "* Backlog %^{verb/action} %^{thing/activity} :contextmanagement:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+    ("f" "Focused Task: {{verb/action}} {{thing/activity}} (e.g., \"Read comp sci concept\")" entry
+     (file+headline "~/katra/zettelkasten.org" "notes")
+     "* Backlog %^{verb/action} %^{thing/activity} :focusedtask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+    ("r" "Routine Task: {{verb/action}} {{thing/activity}} (e.g., \"Update package dependencies\")" entry
+     (file+headline "~/katra/zettelkasten.org" "notes")
+     "* Backlog %^{verb/action} %^{thing/activity} :routinetask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ))
 
   ;; Align tags from org-capture
