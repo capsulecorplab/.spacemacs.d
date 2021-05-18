@@ -549,9 +549,9 @@ before packages are loaded."
     ("g" "Gherkin: Given {{condition}}, when {{action/event}}, then {{expected behavior}}" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Given %^{condition}, when %^{action/event}, then %^{expected behavior} :gherkin:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("c" "Context Management: {{verb/action}} {{thing/activity}} (e.g., \"Setup boilerplate/scaffolding\")" entry
+    ("o" "Operational: {{projectname}}" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
-     "* %^{verb/action} %^{thing/activity} :contextmanagement:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+     "* %^{projectname} housekeeping :operational:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("f" "Focused Task: {{verb/action}} {{thing/activity}} (e.g., \"Read comp sci concept\")" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog %^{verb/action} %^{thing/activity} :focusedtask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
