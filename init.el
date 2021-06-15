@@ -540,9 +540,9 @@ before packages are loaded."
     ("g" "Gherkin: Given {{condition}}, when {{action/event}}, then {{expected behavior}}" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Given %^{condition}, when %^{action/event}, then %^{expected behavior} :gherkin:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("o" "Operational: {{projectname}}" entry
+    ("o" "Operational: {{operationname}}" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
-     "* %^{projectname} housekeeping :operational:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+     "* %^{operationname} [/] [%] :operational:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("l" "LMGTFY Entry" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog %? :lmgtfy:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
