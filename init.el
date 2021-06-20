@@ -546,6 +546,9 @@ before packages are loaded."
     ("l" "LMGTFY Entry" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog %? :lmgtfy:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+    ("c" "Case Entry" entry
+     (file+headline "~/katra/zettelkasten.org" "notes")
+     "* %? :case:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("f" "Focused Task: {{verb/action}} {{thing/activity}} (e.g., \"Read comp sci concept\")" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog %^{verb/action} %^{thing/activity} :focusedtask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
