@@ -535,12 +535,12 @@ before packages are loaded."
     ("u" "User Story: As a {{role}}, I want {{requirement}}, so that {{reason}}" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* As a %^{role}, I want to %^{behavior}, so that I can %^{rationale} :userstory:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("e" "Epic: {{milestone/release}} (e.g., \"Feature milestone/release\")" entry
-     (file+headline "~/katra/zettelkasten.org" "notes")
-     "* %^{milestone/release} [/] [%] :epic:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("g" "Gherkin: Given {{condition}}, when {{action/event}}, then {{expected behavior}}" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Given %^{condition}, when %^{action/event}, then %^{expected behavior} :gherkin:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+    ("e" "Epic: {{milestone/release}} (e.g., \"Feature milestone/release\")" entry
+     (file+headline "~/katra/zettelkasten.org" "notes")
+     "* %^{milestone/release} [/] [%] :epic:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("o" "Operational: {{operationname}}" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* %^{operationname} [/] [%] :operational:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
