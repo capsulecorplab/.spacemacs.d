@@ -49,7 +49,9 @@ This function should only modify configuration layer settings."
      ;; lsp
      markdown
      ;; multiple-cursors
-     org
+     (org :variables
+          org-enable-roam-support t
+          )
      plantuml
      (python :variables
        python-formatter 'black
@@ -76,6 +78,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-additional-packages
    '(
      org-edna
+     org-roam
      plantuml-mode
      )
 
