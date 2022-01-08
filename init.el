@@ -471,6 +471,9 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq custom-file "~/.emacs.d/.cache/.custom-settings")
   (load custom-file))
 
+  ;; org-roam
+  (setq org-roam-v2-ack t)
+
 (defun dotspacemacs/user-load ()
   "Library to load while dumping.
 This function is called only while dumping Spacemacs configuration. You can
