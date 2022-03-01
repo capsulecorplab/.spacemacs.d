@@ -530,7 +530,7 @@ before packages are loaded."
   (setq org-capture-templates
   '(
     ("m" "Meeting Minute Entry" checkitem
-     (file+headline "~/katra/zettelkasten.org" "minutes")
+     (file+headline "~/katra/minutes.org" "minutes")
      "- %U %?" :empty-lines 0)
     ("s" "Soundbite Entry" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
