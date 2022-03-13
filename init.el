@@ -576,6 +576,9 @@ before packages are loaded."
   ;; Create org-id for tasks created w/ org-capture
   (add-hook 'org-capture-mode-hook #'org-id-get-create)
 
+  ;; Store org link using ID property
+  (setq org-id-link-to-org-use-id t)
+
   ;; Set org-pomodoro timer to 25-5
   (setq org-pomodoro-length 25
         org-pomodoro-short-break-length 5
