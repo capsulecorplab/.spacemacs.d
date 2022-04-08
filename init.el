@@ -79,6 +79,7 @@ This function should only modify configuration layer settings."
    '(
      org-edna
      org-roam
+     org-roam-ui
      plantuml-mode
      )
 
