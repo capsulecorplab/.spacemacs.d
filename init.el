@@ -40,6 +40,7 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
      asciidoc
      ;; auto-completion
+     bibtex
      ;; better-defaults
      emacs-lisp
      finance
@@ -77,8 +78,11 @@ This function should only modify configuration layer settings."
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages
    '(
+     magit
      org-edna
+     org-ref
      org-roam
+     org-roam-bibtex
      org-roam-ui
      plantuml-mode
      )
@@ -491,11 +495,52 @@ before packages are loaded."
   ;; Enable Transparency
   (spacemacs/enable-transparency)
 
-  ;; org-roam-ui
-  (setq org-roam-ui-sync-theme t
-        org-roam-ui-follow t
-        org-roam-ui-update-on-save t
-        org-roam-ui-open-on-start t)
+ ;; org-roam v2
+  (use-package org-roam
+    :load-path "/root/org-roam"
+    :custom
+    (org-roam-directory "~/org-roam") ; replace with your path
+    :bind (("C-c n l" . org-roam-buffer-toggle)
+           ("C-c n f" . org-roam-node-find))
+    ; global-page-break-lines-mode will break the org-roam buffer
+    :hook ( org-roam-mode . (lambda () (global-page-break-lines-mode -1)))
+    :config
+    (org-roam-setup)
+    ;; org-roam-ui
+    (setq org-roam-ui-sync-theme t
+          org-roam-ui-follow t
+          org-roam-ui-update-on-save t
+          org-roam-ui-open-on-start t)
+    )
+
+  ;; org-ref
+  (setq reftex-default-bibliography '("~/org/zettelkasten/ref.bib"))
+
+  (setq org-ref-bibliography-notes "~/org/ref_notes.org"
+        org-ref-default-bibliography '("~/org/zettelkasten/ref.bib")
+        org-ref-pdf-directory "~/bibtex-pdfs/")
+
+  (setq bibtex-completion-bibliography "~/org/zettelkasten/ref.bib"
+        bibtex-completion-library-path "~/org/bibtex-pdfs"
+        bibtex-completion-notes-path "~/org/bibtex-notes")
+
+                                        ; Optional. Open pdf in external viewer.
+  (setq bibtex-completion-pdf-open-function
+        (lambda (fpath)
+          (start-process "open" "*open*" "open" fpath)))
+
+
+  (setq org-ref-insert-cite-function
+        (lambda ()
+	        (org-cite-insert nil)))
+
+  ;; org-roam-bibtex
+  (use-package org-roam-bibtex
+    :after org-roam
+    :load-path "~/.emacs.d/private/org-roam-bibtex/"
+    :hook (org-roam-mode . org-roam-bibtex-mode)
+    :config
+    (require 'org-ref)) ; optional: if Org Ref is not loaded anywhere else, load it here
 
   (with-eval-after-load 'org
     ;; Run org-edna-mode
