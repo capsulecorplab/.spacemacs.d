@@ -491,6 +491,12 @@ before packages are loaded."
   ;; Enable Transparency
   (spacemacs/enable-transparency)
 
+  ;; org-roam-ui
+  (setq org-roam-ui-sync-theme t
+        org-roam-ui-follow t
+        org-roam-ui-update-on-save t
+        org-roam-ui-open-on-start t)
+
   (with-eval-after-load 'org
     ;; Run org-edna-mode
     (org-edna-mode)
