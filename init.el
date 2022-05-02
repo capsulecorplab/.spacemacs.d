@@ -496,7 +496,7 @@ before packages are loaded."
 
     ;; Define a kanban style set of stages for todo tasks
     (setq org-todo-keywords
-      '((sequence "Undefined(u)" "Icebox(i)" "Backlog(t)" "Blocked(b)" "WIP(w)" "|" "V&V(v)" "Done(d)" "Archived(a)")))
+      '((sequence "Undefined(u)" "Icebox(i)" "Backlog(t)" "Blocked(b)" "WIP(w)" "V&V(v)" "|" "Done(d)" "Archived(a)")))
 
     ;; The default keywords all use the same colour.
     ;; Make the states easier to distinguish by using different colours
