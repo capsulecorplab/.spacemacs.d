@@ -533,37 +533,37 @@ before packages are loaded."
      (file+headline "~/katra/minutes.org" "minutes")
      "- %U %?" :empty-lines 0)
     ("s" "Soundbite Entry" entry
-     (file+headline "~/katra/zettelkasten.org" "notes")
+     (file+headline "~/katra/zettelkasten.org" "fleetingnotes")
      "* %? :soundbite:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("n" "Stakeholder Need: As a {{stakeholder}}, I need {{need}}" entry
-     (file+headline "~/katra/zettelkasten.org" "notes")
+     (file+headline "~/katra/zettelkasten.org" "unsorted")
      "* Backlog As a %^{stakeholder}, I need %^{need} :stakeholderneed:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("u" "User Story: As a {{role}}, I want {{requirement}}, so that {{reason}}" entry
-     (file+headline "~/katra/zettelkasten.org" "notes")
+     (file+headline "~/katra/zettelkasten.org" "unsorted")
      "* Backlog As a %^{role}, I want to %^{behavior}, so that I can %^{rationale} :userstory:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("g" "Gherkin: Given {{condition}}, when {{action/event}}, then {{expected behavior}}" entry
-     (file+headline "~/katra/zettelkasten.org" "notes")
+     (file+headline "~/katra/zettelkasten.org" "unsorted")
      "* Backlog Given %^{condition}, when %^{action/event}, then %^{expected behavior} :gherkin:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("e" "Epic: {{milestone/release}} (e.g., \"Feature milestone/release\")" entry
-     (file+headline "~/katra/zettelkasten.org" "notes")
+     (file+headline "~/katra/zettelkasten.org" "unsorted")
      "* Backlog %^{milestone/release} [/] [%] :epic:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("o" "Operational: {{operationname}}" entry
-     (file+headline "~/katra/zettelkasten.org" "notes")
+     (file+headline "~/katra/zettelkasten.org" "unsorted")
      "* %^{operationname} [/] [%] :operational:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("c" "Case Entry" entry
-     (file+headline "~/katra/zettelkasten.org" "notes")
+     (file+headline "~/katra/zettelkasten.org" "unsorted")
      "* Backlog %? :case:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("f" "Focused Task: {{verb/action}} {{thing/activity}} (e.g., \"Read comp sci concept\")" entry
-     (file+headline "~/katra/zettelkasten.org" "notes")
+     (file+headline "~/katra/zettelkasten.org" "unsorted")
      "* Backlog %^{verb/action} %^{thing/activity} :focusedtask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("a" "Annotation Entry" entry
-     (file+headline "~/katra/zettelkasten.org" "notes")
+     (file+headline "~/katra/zettelkasten.org" "unsorted")
      "* %?%a :annotation:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("b" "Bookmark Entry" entry
-     (file+headline "~/katra/zettelkasten.org" "notes")
+     (file+headline "~/katra/zettelkasten.org" "fleetingnotes")
      "* %? :bookmark:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("r" "Routine Task: {{verb/action}} {{thing/activity}} (e.g., \"Update package dependencies\")" entry
-     (file+headline "~/katra/zettelkasten.org" "notes")
+     (file+headline "~/katra/zettelkasten.org" "unsorted")
      "* Backlog %^{verb/action} %^{thing/activity} :routinetask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ))
 
