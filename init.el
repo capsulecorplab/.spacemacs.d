@@ -550,9 +550,6 @@ before packages are loaded."
     ("o" "Operational: {{operationname}}" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* %^{operationname} [/] [%] :operational:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("l" "LMGTFY Entry" entry
-     (file+headline "~/katra/zettelkasten.org" "notes")
-     "* Backlog %? :lmgtfy:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("c" "Case Entry" entry
      (file+headline "~/katra/zettelkasten.org" "notes")
      "* Backlog %? :case:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
