@@ -608,6 +608,9 @@ before packages are loaded."
     ("d" "Downselect Entry" entry
      (file+headline "~/katra/zettelkasten.org" "unsorted")
      "* Backlog downselect %? :focusedtask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+    ("z" "Zettelkasten Task: read/write zettel on {{concept/topic/subject}} (e.g., \"Read/write zettel note on comp sci concept\")" entry
+     (file+headline "~/katra/zettelkasten.org" "unsorted")
+     "* Backlog read/write zettel note on %? :focusedtask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
     ("f" "Focused Task: {{verb/action}} {{thing/activity}} (e.g., \"Read comp sci concept\")" entry
      (file+headline "~/katra/zettelkasten.org" "unsorted")
      "* Backlog %^{verb/action} %^{thing/activity} :focusedtask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
