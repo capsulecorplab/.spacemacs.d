@@ -1,1 +1,5 @@
+# wav files
 *.wav
+
+# emacs
+.spacemacs.env
