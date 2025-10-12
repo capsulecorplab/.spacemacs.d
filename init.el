@@ -50,6 +50,7 @@ This function should only modify configuration layer settings."
      ;; lsp
      markdown
      ;; multiple-cursors
+     nixos
      (org :variables
           org-enable-roam-support t
           )
