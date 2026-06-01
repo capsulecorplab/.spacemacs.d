@@ -7,7 +7,7 @@
 
 ## Requirements
 
-- [podman](https://podman.io/getting-started/installation) - for running emacs via a podman container
+- [nix](https://nixos.org/download/) - for running emacs via nix installation (single-user installation recommended)
 - [git](https://git-scm.com/) - for cloning the spacemacs repo and config files
 
 ## Installation
@@ -19,11 +19,17 @@ git clone git@github.com:capsulecorplab/spacemacs.git ~/.emacs.d
 git clone git@github.com:capsulecorplab/.spacemacs.d.git ~/
 ```
 
-## Usage
-
-Run emacs from podman by running the following bash script
+Install emacs version 29.4 using nix
 
 ```
-./run_emacs_from_podman.sh
+nix profile install nixpkgs/release-24.05#emacs --extra-experimental-features nix-command --extra-experimental-features flakes
+```
+
+## Usage
+
+Run emacs
+
+```
+emacs
 ```
 
