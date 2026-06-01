@@ -1,25 +1,30 @@
 # .spacemacs.d
 
-[spacemacs](https://www.spacemacs.org/) config files, configured with [org-roam](https://github.com/org-roam/org-roam) and extension, s.a.:
+[spacemacs](https://www.spacemacs.org/) config files, configured with [org-roam](https://github.com/org-roam/org-roam) and extensions, s.a.:
 
 - [org-roam-ui](https://github.com/org-roam/org-roam-ui)
 - [org-roam-bibtex](https://github.com/org-roam/org-roam-bibtex)
 
 ## Requirements
 
-- [nix](https://nixos.org/download/) - for running emacs via nix installation (single-user installation recommended)
+- [nix](https://nixos.org/download/) - for running emacs via nix installed emacs package (single-user installation recommended)
 - [git](https://git-scm.com/) - for cloning the spacemacs repo and config files
 
 ## Installation
 
-Clone the spacemacs and .spacemacs.d repos
+Clone spacemacs from the official repo into your home directory as `~/.emacs.d`
 
 ```
-git clone git@github.com:capsulecorplab/spacemacs.git ~/.emacs.d
-git clone git@github.com:capsulecorplab/.spacemacs.d.git ~/
+git clone https://github.com/syl20bnr/spacemacs.git ~/.emacs.d
 ```
 
-Install emacs version 29.4 using nix
+Clone this `.spacemacs.d` repo into your home directory
+
+```
+git clone https://github.com/capsulecorplab/.spacemacs.d.git ~/
+```
+
+Install emacs version 29.4 (from NixOS release 24.05) using nix
 
 ```
 nix profile install nixpkgs/release-24.05#emacs --extra-experimental-features nix-command --extra-experimental-features flakes
