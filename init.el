@@ -56,10 +56,10 @@ This function should only modify configuration layer settings."
           )
      plantuml
      (python :variables
-       python-formatter 'black
-       python-format-on-save t
-       )
-     rust
+             python-formatter 'black
+             python-format-on-save t
+             )
+     ;;rust
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -136,7 +136,7 @@ It should only modify the values of Spacemacs settings."
    ;; This variable has no effect if Emacs is launched with the parameter
    ;; `--insecure' which forces the value of this variable to nil.
    ;; (default t)
-   dotspacemacs-elpa-https t
+   dotspacemacs-elpa-https nil
 
    ;; Maximum allowed time in seconds to contact an ELPA repository.
    ;; (default 5)
@@ -419,7 +419,7 @@ It should only modify the values of Spacemacs settings."
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `rg', `ag', `pt', `ack' and `grep'.
    ;; (default '("rg" "ag" "pt" "ack" "grep"))
-   dotspacemacs-search-tools '("rg" "ag" "pt" "ack" "grep")
+   dotspacemacs-search-tools '("rg" "ag" "ack" "grep")
 
    ;; Format specification for setting the frame title.
    ;; %a - the `abbreviated-file-name', or `buffer-name'
@@ -477,8 +477,8 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq custom-file "~/.emacs.d/.cache/.custom-settings")
   (load custom-file))
 
-  ;; org-roam
-  (setq org-roam-v2-ack t)
+;; org-roam
+(setq org-roam-v2-ack t)
 
 (defun dotspacemacs/user-load ()
   "Library to load while dumping.
@@ -493,8 +493,10 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+  (require 'use-package)
+
   ;; Enable Transparency
-  (spacemacs/enable-transparency)
+                                        ;(spacemacs/enable-transparency)
 
   ;; syntax highlighting for code blocks
   ;; see https://stackoverflow.com/questions/10642888/syntax-highlighting-within-begin-src-block-in-emacs-orgmode-not-working
@@ -507,7 +509,7 @@ before packages are loaded."
     (org-roam-directory "~/org-roam") ; replace with your path
     :bind (("C-c n l" . org-roam-buffer-toggle)
            ("C-c n f" . org-roam-node-find))
-    ; global-page-break-lines-mode will break the org-roam buffer
+                                        ; global-page-break-lines-mode will break the org-roam buffer
     :hook ( org-roam-mode . (lambda () (global-page-break-lines-mode -1)))
     :config
     (org-roam-setup)
@@ -537,7 +539,7 @@ before packages are loaded."
 
   (setq org-ref-insert-cite-function
         (lambda ()
-	        (org-cite-insert nil)))
+          (org-cite-insert nil)))
 
   ;; org-roam-bibtex
   (use-package org-roam-bibtex
@@ -562,12 +564,12 @@ before packages are loaded."
     ;; https://github.com/tkf/org-mode/blob/master/lisp/org-faces.el#L376
     ;; Using `with-eval-after-load' as a hook to call this setting when org-mode is run
     (setq org-todo-keyword-faces
-    '(("Icebox" .  "SlateBlue")
-      ("Backlog" . "SlateGray")
-      ("Blocked" . "Firebrick")
-      ("WIP" . "DarkOrchid")
-      ("V&V" . "Teal")
-      ("Closed" . "ForestGreen")))
+          '(("Icebox" .  "SlateBlue")
+            ("Backlog" . "SlateGray")
+            ("Blocked" . "Firebrick")
+            ("WIP" . "DarkOrchid")
+            ("V&V" . "Teal")
+            ("Closed" . "ForestGreen")))
 
     ;; Set default org file for org-capture
     (setq-default org-default-notes-file "~/katra/zettelkasten.org")
@@ -576,59 +578,59 @@ before packages are loaded."
   (setq debug-on-error t)
 
   (setq
-    ;; Set directory for org-agenda-files
-    org-agenda-files (list "~/katra/")
-    ;; Disable start-on-weekday
-    org-agenda-start-on-weekday nil
-    ;; Set default org-agenda span to 14 days
-    org-agenda-span 14)
+   ;; Set directory for org-agenda-files
+   org-agenda-files (list "~/katra/")
+   ;; Disable start-on-weekday
+   org-agenda-start-on-weekday nil
+   ;; Set default org-agenda span to 14 days
+   org-agenda-span 14)
 
   ;; Set custom org-capture templates
   (setq org-capture-templates
-  '(
-    ("m" "Meeting Minute Entry" checkitem
-     (file+headline "~/katra/minutes.org" "minutes")
-     "- %U %?" :empty-lines 0)
-    ("s" "Soundbite Entry" entry
-     (file+headline "~/katra/zettelkasten.org" "fleetingnotes")
-     "* %? :soundbite:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("n" "Stakeholder Need: As a {{stakeholder}}, I need {{need}}" entry
-     (file+headline "~/katra/zettelkasten.org" "unsorted")
-     "* Backlog As a %^{stakeholder}, I need %^{need} :stakeholderneed:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("u" "User Story: As a {{role}}, I want {{requirement}}, so that {{reason}}" entry
-     (file+headline "~/katra/zettelkasten.org" "unsorted")
-     "* Backlog As a %^{role}, I want to %^{behavior}, so that I can %^{rationale} :userstory:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("g" "Gherkin: Given {{condition}}, when {{action/event}}, then {{expected behavior}}" entry
-     (file+headline "~/katra/zettelkasten.org" "unsorted")
-     "* Backlog Given %^{condition}, when %^{action/event}, then %^{expected behavior} :gherkin:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("e" "Epic: {{milestone/release}} (e.g., \"Feature milestone/release\")" entry
-     (file+headline "~/katra/zettelkasten.org" "unsorted")
-     "* Backlog %^{milestone/release} [/] [%] :epic:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("o" "Operational: {{operationname}}" entry
-     (file+headline "~/katra/zettelkasten.org" "unsorted")
-     "* %^{operationname} [/] [%] :operational:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("c" "Case Entry" entry
-     (file+headline "~/katra/zettelkasten.org" "unsorted")
-     "* Backlog investigate %? :case:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("d" "Downselect Entry" entry
-     (file+headline "~/katra/zettelkasten.org" "unsorted")
-     "* Backlog downselect %? :focusedtask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("z" "Zettelkasten Task: read/write zettel on {{concept/topic/subject}} (e.g., \"Read/write zettel note on comp sci concept\")" entry
-     (file+headline "~/katra/zettelkasten.org" "unsorted")
-     "* Backlog read/write zettel note on %? :focusedtask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("f" "Focused Task: {{verb/action}} {{thing/activity}} (e.g., \"Read comp sci concept\")" entry
-     (file+headline "~/katra/zettelkasten.org" "unsorted")
-     "* Backlog %^{verb/action} %^{thing/activity} :focusedtask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("a" "Annotation Entry" entry
-     (file+headline "~/katra/zettelkasten.org" "unsorted")
-     "* %?%a :annotation:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("b" "Bookmark Entry" entry
-     (file+headline "~/katra/zettelkasten.org" "fleetingnotes")
-     "* %? :bookmark:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ("r" "Routine Task: {{verb/action}} {{thing/activity}} (e.g., \"Update package dependencies\")" entry
-     (file+headline "~/katra/zettelkasten.org" "unsorted")
-     "* Backlog %^{verb/action} %^{thing/activity} :routinetask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
-    ))
+        '(
+          ("m" "Meeting Minute Entry" checkitem
+           (file+headline "~/katra/minutes.org" "minutes")
+           "- %U %?" :empty-lines 0)
+          ("s" "Soundbite Entry" entry
+           (file+headline "~/katra/zettelkasten.org" "fleetingnotes")
+           "* %? :soundbite:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+          ("n" "Stakeholder Need: As a {{stakeholder}}, I need {{need}}" entry
+           (file+headline "~/katra/zettelkasten.org" "unsorted")
+           "* Backlog As a %^{stakeholder}, I need %^{need} :stakeholderneed:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+          ("u" "User Story: As a {{role}}, I want {{requirement}}, so that {{reason}}" entry
+           (file+headline "~/katra/zettelkasten.org" "unsorted")
+           "* Backlog As a %^{role}, I want to %^{behavior}, so that I can %^{rationale} :userstory:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+          ("g" "Gherkin: Given {{condition}}, when {{action/event}}, then {{expected behavior}}" entry
+           (file+headline "~/katra/zettelkasten.org" "unsorted")
+           "* Backlog Given %^{condition}, when %^{action/event}, then %^{expected behavior} :gherkin:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+          ("e" "Epic: {{milestone/release}} (e.g., \"Feature milestone/release\")" entry
+           (file+headline "~/katra/zettelkasten.org" "unsorted")
+           "* Backlog %^{milestone/release} [/] [%] :epic:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+          ("o" "Operational: {{operationname}}" entry
+           (file+headline "~/katra/zettelkasten.org" "unsorted")
+           "* %^{operationname} [/] [%] :operational:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+          ("c" "Case Entry" entry
+           (file+headline "~/katra/zettelkasten.org" "unsorted")
+           "* Backlog investigate %? :case:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+          ("d" "Downselect Entry" entry
+           (file+headline "~/katra/zettelkasten.org" "unsorted")
+           "* Backlog downselect %? :focusedtask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+          ("z" "Zettelkasten Task: read/write zettel on {{concept/topic/subject}} (e.g., \"Read/write zettel note on comp sci concept\")" entry
+           (file+headline "~/katra/zettelkasten.org" "unsorted")
+           "* Backlog read/write zettel note on %? :focusedtask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+          ("f" "Focused Task: {{verb/action}} {{thing/activity}} (e.g., \"Read comp sci concept\")" entry
+           (file+headline "~/katra/zettelkasten.org" "unsorted")
+           "* Backlog %^{verb/action} %^{thing/activity} :focusedtask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+          ("a" "Annotation Entry" entry
+           (file+headline "~/katra/zettelkasten.org" "unsorted")
+           "* %?%a :annotation:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+          ("b" "Bookmark Entry" entry
+           (file+headline "~/katra/zettelkasten.org" "fleetingnotes")
+           "* %? :bookmark:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+          ("r" "Routine Task: {{verb/action}} {{thing/activity}} (e.g., \"Update package dependencies\")" entry
+           (file+headline "~/katra/zettelkasten.org" "unsorted")
+           "* Backlog %^{verb/action} %^{thing/activity} :routinetask:\n:PROPERTIES:\n:CREATED: %U\n:END:" :empty-lines 0)
+          ))
 
   ;; Align tags from org-capture
   (add-hook 'org-capture-mode-hook #'org-align-all-tags)
@@ -661,4 +663,4 @@ before packages are loaded."
 
   ;; set alignment for column transaction posts
   (setq ledger-post-amount-alignment-column 88)
-)
+  )

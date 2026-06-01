@@ -1,2 +1,5 @@
+# .spacemacs.env
+.spacemacs.env
+
 # wav files
 *.wav
