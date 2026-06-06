@@ -496,7 +496,7 @@ before packages are loaded."
   (require 'use-package)
 
   ;; Enable Transparency
-                                        ;(spacemacs/enable-transparency)
+  (spacemacs/enable-transparency)
 
   ;; syntax highlighting for code blocks
   ;; see https://stackoverflow.com/questions/10642888/syntax-highlighting-within-begin-src-block-in-emacs-orgmode-not-working
